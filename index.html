@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Very Important Question 💘</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <main id="game">
+
+    <!-- Scene 1 -->
+    <section class="scene active" id="scene-1">
+      <h1>💌 Hello, my love</h1>
+      <p>You’ve been invited to a very important Valentine mission.</p>
+      <button onclick="goToScene(2)">Begin 💖</button>
+    </section>
+
+    <!-- Scene 2 -->
+    <section class="scene" id="scene-2">
+      <h2>Do you accept the challenge?</h2>
+      <button onclick="goToScene(3)">Yes 💕</button>
+      <button onclick="goToScene(3)">Obviously yes 😌</button>
+    </section>
+
+    <!-- Scene 3 – Puzzle -->
+    <section class="scene" id="scene-3">
+      <h2>🧩 Tiny Puzzle</h2>
+      <p>What month did we first meet?</p>
+
+      <input type="text" id="answer" placeholder="Type your answer here…" />
+      <button onclick="checkAnswer()">Submit</button>
+
+      <p id="feedback"></p>
+    </section>
+
+    <!-- Final Scene -->
+    <section class="scene" id="scene-4">
+      <h1>🎉 You did it!</h1>
+      <p>You solved the puzzle and made it to the end.</p>
+      <p><strong>Will you be my Valentine? 💘</strong></p>
+    </section>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
