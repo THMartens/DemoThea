@@ -1,2 +1,0 @@
-const music = new Audio('./assets/music/love-song.mp3');
-music.play();

@@ -36,8 +36,31 @@
       <p id="feedback"></p>
     </section>
 
-    <!-- Final Scene -->
+    <!-- Scene 4 - Timeline Puzzle -->
     <section class="scene" id="scene-4">
+        <h2>🕰️ Put our memories in order</h2>
+        <p>Drag the photos onto the timeline.</p>
+
+        <!-- Photos you drag -->
+        <div class="photo-pool">
+        <img src="./assets/photos/Ties.jpg" draggable="true" class="draggable" data-id="1">
+        <img src="./assets/photos/Ties1.jpg" draggable="true" class="draggable" data-id="2">
+        <img src="./assets/photos/Ties2.jpg" draggable="true" class="draggable" data-id="3">
+        </div>
+
+        <!-- Timeline slots -->
+        <div class="timeline">
+        <div class="slot" data-position="1">Drop first memory here</div>
+        <div class="slot" data-position="2">Drop second memory here</div>
+        <div class="slot" data-position="3">Drop third memory here</div>
+        </div>
+
+        <button onclick="checkTimeline()">Submit Order 💖</button>
+        <p id="timeline-feedback"></p>
+    </section>
+
+    <!-- Final Scene -->
+    <section class="scene" id="scene-5">
       <h1>🎉 You did it!</h1>
       <p>You solved the puzzle and made it to the end.</p>
       <p><strong>Will you be my Valentine? 💘</strong></p>
