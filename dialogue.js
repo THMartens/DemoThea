@@ -6,18 +6,32 @@ class DialogueSystem {
 
     this.lines = [];
     this.index = 0;
-    this.nextScene = null;
 
-    this.box.addEventListener("click", () => this.next());
+    this.clickHandler = null; // store event handler
   }
 
-  async start(path, nextScene = null) {
+  async start(path) {
     const response = await fetch(path);
     this.lines = await response.json();
     this.index = 0;
-    this.nextScene = nextScene;
     this.box.classList.remove("hidden");
-    this.showLine();
+
+    return new Promise((resolve) => {
+      // set up click handler for advancing dialogue
+      this.clickHandler = () => {
+        this.index++;
+        if (this.index < this.lines.length) {
+          this.showLine();
+        } else {
+          this.box.classList.add("hidden");
+          this.box.removeEventListener("click", this.clickHandler);
+          resolve(); // resolve the promise when dialogue ends
+        }
+      };
+
+      this.box.addEventListener("click", this.clickHandler);
+      this.showLine(); // show first line immediately
+    });
   }
 
   showLine() {
@@ -25,23 +39,6 @@ class DialogueSystem {
     this.nameEl.textContent = line.name;
     this.textEl.textContent = line.text;
   }
-
-  next() {
-    this.index++;
-    if (this.index < this.lines.length) {
-      this.showLine();
-    } else {
-      this.end();
-    }
-  }
-
-  end() {
-    this.box.classList.add("hidden");
-    if (this.nextScene) {
-      goToScene(this.nextScene);
-    }
-  }
 }
 
 window.DialogueSystem = DialogueSystem;
-

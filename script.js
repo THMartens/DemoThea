@@ -1,29 +1,32 @@
 const dialogue = new DialogueSystem();
+
 const scenes = {
-  1: {
-    dialogue: "dialogue/intro.json"
-  },
-  2: {
-    dialogue: "dialogue/aardbeving.json"
-  },
-  3: {
-    dialogue: "dialogue/na_de_aardbeving.json"
-  }
+  1: { dialogue: "dialogue/intro.json", nextScene: 2 },
+  2: { dialogue: "dialogue/aardbeving.json", nextScene: 3 },
+  3: { dialogue: "dialogue/na_de_aardbeving.json", nextScene: 4 },
+  4: { dialogue: null, nextScene: null } // end of demo
 };
 
-function goToScene(number) {
-  document.querySelectorAll('.scene').forEach(scene => {
-    scene.classList.remove('active');
-  });
+async function goToScene(number) {
+  if (!number) return;
 
-  document.getElementById(`scene-${number}`).classList.add('active');
+  // hide all scenes and show the current one
+  document.querySelectorAll(".scene").forEach(scene => scene.classList.remove("active"));
+  const sceneEl = document.getElementById(`scene-${number}`);
+  if (sceneEl) sceneEl.classList.add("active");
 
-  const scene = scenes[number];
-
+  const scene = scenes[number.toString()];
   if (scene?.dialogue) {
-    dialogue.start(scene.dialogue, number + 1);
+    await dialogue.start(scene.dialogue); // wait until dialogue ends
+  }
+
+  // after dialogue is done, go to next scene
+  if (scene?.nextScene) {
+    goToScene(scene.nextScene);
   }
 }
+
+
 
 function checkAnswer() {
   const input = document.getElementById('answer').value.toLowerCase().trim();
@@ -39,7 +42,10 @@ function checkAnswer() {
   }
 }
 
-console.log("script.js loaded");
+// start the first scene
+goToScene(1);
+
+
 
 
 
