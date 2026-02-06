@@ -4,10 +4,10 @@ const scenes = {
     dialogue: "dialogue/intro.json"
   },
   2: {
-    dialogue: "dialogue/tavern.json"
+    dialogue: "dialogue/aardbeving.json"
   },
   3: {
-    dialogue: "dialogue/earthquake.json"
+    dialogue: "dialogue/na_de_aardbeving.json"
   }
 };
 
