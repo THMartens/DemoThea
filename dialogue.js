@@ -6,14 +6,16 @@ class DialogueSystem {
 
     this.lines = [];
     this.index = 0;
+    this.nextScene = null;
 
     this.box.addEventListener("click", () => this.next());
   }
 
-  async start(path) {
+  async start(path, nextScene = null) {
     const response = await fetch(path);
     this.lines = await response.json();
     this.index = 0;
+    this.nextScene = nextScene;
     this.box.classList.remove("hidden");
     this.showLine();
   }
@@ -35,6 +37,9 @@ class DialogueSystem {
 
   end() {
     this.box.classList.add("hidden");
+    if (this.nextScene) {
+      goToScene(this.nextScene);
+    }
   }
 }
 

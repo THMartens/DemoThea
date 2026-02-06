@@ -21,7 +21,7 @@ function goToScene(number) {
   const scene = scenes[number];
 
   if (scene?.dialogue) {
-    dialogue.start(scene.dialogue);
+    dialogue.start(scene.dialogue, number + 1);
   }
 }
 
