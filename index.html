@@ -11,63 +11,64 @@
 
   <main id="game">
 
+    <!-- Scene 0 -->
+    <section class="scene active" id="scene-0">
+      <button onclick="goToScene(1)">Klik hier</button>
+    </section>
+
     <!-- Scene 1 -->
-    <section class="scene active" id="scene-1">
-      <h1>💌 Hello, my love</h1>
-      <p>You’ve been invited to a very important Valentine mission.</p>
-      <button onclick="goToScene(2)">Begin 💖</button>
-    </section>
-
+    <section class="scene" id="scene-1"></section>
+    
     <!-- Scene 2 -->
+    <section class="scene" id="scene-2"></section>
+      
+
+<!--
+      <p>Het is 12 Februari 2026 en Thea zit op haar kamer. 
+        Ze is net teruggekomen van een lange dag als co-assistent in het UHD ziekenhuis in Yogyakarta wanneer ze realiseert dat het deze zaterdag Valentijnsdag is! 
+        En ze heeft nog helemaal geen cadeau. 
+        Het is natuurlijk ook lastig om een goed cadeau te bedenken want ze zit op 11605 km afstand van haar lieve vriendje Ties. 
+        Dat is toch een beetje ver om zelf koekjes te bakken en op te sturen.</p>
+      <button onclick="goToScene(2)">Klik om door te gaan</button>
+    </section>
+
+    !-- Scene 2 --
     <section class="scene" id="scene-2">
-      <h2>Do you accept the challenge?</h2>
-      <button onclick="goToScene(3)">Yes 💕</button>
-      <button onclick="goToScene(3)">Obviously yes 😌</button>
+      <p>Ineens schiet haar een idee te binnen, ze heeft een doosje met allemaal leuke foto's meegenomen, misschien kan ze die gebruiken om een album te maken.
+         Haar kamer is gelukkig zoals altijd keurig opgeruimd en perfect geordend dus ze weet precies waar ze het doosje met foto's kan vinden. 
+         Ze opent het doosje en haalt er een paar leuke foto's uit die ze over de tafel verspreid. 
+         'Wat leuk eigenlijk om deze foto's nog eens terug te kijken, zoveel bijzondere herinneringen', denkt Thea.</p>
+      <button onclick="goToScene(3)">Klik om door te gaan</button>
     </section>
 
-    <!-- Scene 3 – Puzzle -->
+    !-- Scene 3 --
     <section class="scene" id="scene-3">
-      <h2>🧩 Tiny Puzzle</h2>
-      <p>What month did we first meet?</p>
+      <p>Maar dan voelt Thea ineens dat de grond begint te trillen. 
+        'Dat meen je niet, weer een aardbeving!'. Thea begeeft zich snel naar een veilige plek vlak buiten haar appartement. 
+        Gelukkig was het deze keer maar van korte duur en na een paar minuutjes gaat Thea weer naar binnen. 
+        Tot haar grote schrik is het doosje met foto's van haar bureau gevallen en liggen de foto's verspreid over de hele kamer. Wat een ramp!</p>
+      <button onclick="goToScene(4)">Klik om door te gaan</button>
 
-      <input type="text" id="answer" placeholder="Type your answer here…" />
-      <button onclick="checkAnswer()">Submit</button>
-
-      <p id="feedback"></p>
-    </section>
-
-    <!-- Scene 4 - Timeline Puzzle -->
-    <section class="scene" id="scene-4">
-        <h2>🕰️ Put our memories in order</h2>
-        <p>Drag the photos onto the timeline.</p>
-
-        <!-- Photos you drag -->
-        <div class="photo-pool">
-        <img src="./assets/photos/Ties.jpg" draggable="true" class="draggable" data-id="1">
-        <img src="./assets/photos/Ties1.jpg" draggable="true" class="draggable" data-id="2">
-        <img src="./assets/photos/Ties2.jpg" draggable="true" class="draggable" data-id="3">
-        </div>
-
-        <!-- Timeline slots -->
-        <div class="timeline">
-        <div class="slot" data-position="1">Drop first memory here</div>
-        <div class="slot" data-position="2">Drop second memory here</div>
-        <div class="slot" data-position="3">Drop third memory here</div>
-        </div>
-
-        <button onclick="checkTimeline()">Submit Order 💖</button>
-        <p id="timeline-feedback"></p>
-    </section>
+  -->
+    
 
     <!-- Final Scene -->
     <section class="scene" id="scene-5">
-      <h1>🎉 You did it!</h1>
-      <p>You solved the puzzle and made it to the end.</p>
-      <p><strong>Will you be my Valentine? 💘</strong></p>
     </section>
+
+    <!-- Dialogue Box -->
+    <div id="dialogue-box">
+        <div id="character-name"></div>
+        <div id="dialogue-text"></div>
+    </div>
+
+    
 
   </main>
 
-  <script src="./script.js"></script>
+  <!-- JS Scripts-->
+  <script src="dialogue.js"></script>
+  <script src="script.js"></script>
+  
 </body>
 </html>
