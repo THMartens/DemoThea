@@ -1,10 +1,10 @@
 const dialogue = new DialogueSystem();
 
 const scenes = {
-  1: { dialogue: "dialogue/intro.json", nextScene: 2 },
+  1: { dialogue: "dialogue/intro.json", nextScene: 6 },
   2: { dialogue: "dialogue/aardbeving.json", nextScene: 3 },
   3: { dialogue: "dialogue/na_de_aardbeving.json", nextScene: 4 },
-  4: { dialogue: null, nextScene: null } // end of demo
+  5: { dialogue: "dialogue/het_doekje.json", nextScene: 6 },
 };
 
 async function goToScene(number) {

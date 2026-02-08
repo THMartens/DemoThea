@@ -16,8 +16,8 @@ body {
   background: white;
   padding: 2rem;
   border-radius: 16px;
-  width: 90%;
-  max-width: 640px;
+  width: 100%;
+  max-width: 1280px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
@@ -59,7 +59,7 @@ input {
 
 #dialogue-box {
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -85,3 +85,113 @@ input {
 .hidden {
   display: none;
 }
+
+/*
+--- TIMELINE PUZZLE ---
+*/
+
+#timeline {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #aaa;
+      min-height: 140px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+.slot {
+  width: 160px;
+  height: 200px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+
+.slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: grab;
+}
+
+#message {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+
+#nextButton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: none;
+  cursor: pointer;
+}
+
+#dateTimeline {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  width: 100%;
+}
+
+#dateTimeline .date {
+  font-size: 14px;
+  min-width: 70px;
+  text-align: center;
+  color: #444;
+}
+
+#timelineTicks {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  flex: 1;
+  position: relative;
+}
+
+#timelineTicks::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #444;
+}
+
+.tick {
+  height: 14px;
+  width: 2px;
+  background: #444;
+  justify-self: center;
+}
+
+/*
+--- SPOT THE MISTAKE ---
+*/
+
+#imageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+#mainImage {
+  width: 600px;
+  display: block;
+}
+
+/* Invisible clickable circle */
+.hotspot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: default; /* important */
+  background: rgba(255, 0, 0, 0.3);
+}
+

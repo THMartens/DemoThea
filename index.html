@@ -11,17 +11,65 @@
 
   <main id="game">
 
-    <!-- Scene 1 -- Aardbeving -->
-    <section class="scene" id="scene-1">
-      
-    </section>
-    
-    <!-- Scene 2 -- Na de Aardbeving -->
+    <!-- Scene 1 -- Introductie -->
+    <section class="scene" id="scene-1"></section>
+
+    <!-- Scene 2 -- Aardbeving -->
     <section class="scene" id="scene-2"></section>
+    
+    <!-- Scene 3 -- Na de Aardbeving -->
+    <section class="scene" id="scene-3"></section>
+
+    <!-- Scene 4 -- Tijdlijn Puzzel -->
+    <section class="scene" id="scene-4">
+      <h1>Plaats de foto's in chronologische volgorde</h1>
+
+      <div id="timeline"></div>
+
+      <div id="dateTimeline">
+      <span class="date left">2019</span>
+
+      <div id="timelineTicks">
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+        <span class="tick"></span>
+      </div>
+
+      <span class="date right">2026</span>
+      </div>
+
+
+      <div id="message">✅ Dat is de juiste volgorde!</div>
+      <button onclick="goToScene(5)" id="nextButton">Doorgaan →</button>
+
+    </section>
+
+     <!-- Scene 5 -- Het doekje -->
+    <section class="scene" id="scene-5"></section>
+
+    <!-- Scene 6 -- Zoek de fout -->
+     <section class="scene" id="scene-6">
+     <h1>Zoek de fout</h1>
+
+      <div id="imageContainer">
+        <img id="mainImage" src="assets/photos/mistake/1.jpeg">
+        <div id="hotspot" class="hotspot"></div>
+      </div>
+
+      <br>
+      <button id="nextButton2">Doorgaan →</button>
+      </section>
     
 
     <!-- Final Scene -->
-    <section class="scene" id="scene-5">
+    <section class="scene" id="scene-7">
+      <h1>Je hebt het verhaal van Thea ontdekt!</h1>
+      <p>Bedankt voor het spelen van deze interactieve ervaring. We hopen dat je genoten hebt van het ontdekken van Thea's verhaal en de uitdagingen die ze heeft doorstaan. Blijf nieuwsgierig en blijf verhalen ontdekken!</p>
     </section>
 
     <!-- Dialogue Box -->
@@ -30,12 +78,13 @@
         <div id="dialogue-text"></div>
     </div>
 
-    
 
   </main>
 
   <!-- JS Scripts-->
   <script src="dialogue.js"></script>
+  <script src="timeline.js"></script>
+  <script src="spot_the_mistake.js"></script>
   <script src="script.js"></script>
   
 </body>
