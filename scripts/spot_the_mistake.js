@@ -3,29 +3,39 @@
   // Hard-coded data = simple & readable
   const puzzles = [
     {
-      src: 'assets/photos/mistake/1.jpeg',
-      x: 320,
-      y: 180
+      src: 'assets/photos/mistake/1.jpg',
+      x: 100,
+      y: 360,
+      width: 40,
+      height: 40
     },
     {
-      src: 'assets/photos/mistake/2.jpeg',
-      x: 210,
-      y: 260
+      src: 'assets/photos/mistake/2.jpg',
+      x: 365,
+      y: 340,
+      width: 20,
+      height: 20
     },
     {
-      src: 'assets/photos/mistake/3.jpeg',
-      x: 420,
-      y: 150
+      src: 'assets/photos/mistake/3.jpg',
+      x: 633,
+      y: 335,
+      width: 35,
+      height: 35
     },
     {
-      src: 'assets/photos/mistake/4.jpeg',
-      x: 300,
-      y: 320
+      src: 'assets/photos/mistake/4.jpg',
+      x: 280,
+      y: 660,
+      width: 60,
+      height: 40
     },
     {
-      src: 'assets/photos/mistake/5.jpeg',
-      x: 150,
-      y: 200
+      src: 'assets/photos/mistake/5.jpg',
+      x: 415,
+      y: 445,
+      width: 70,
+      height: 70
     }
   ];
 
@@ -38,6 +48,9 @@
 
     image.src = puzzle.src;
 
+    hotspot.style.width = puzzle.width + 'px';
+    hotspot.style.height = puzzle.height + 'px';
+
     hotspot.style.left = puzzle.x + 'px';
     hotspot.style.top = puzzle.y + 'px';
 
@@ -45,10 +58,12 @@
   }
 
   hotspot.addEventListener('click', () => {
+    hotspot.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
     nextButton2.style.display = 'inline-block';
   });
 
   nextButton2.addEventListener('click', () => {
+    hotspot.style.backgroundColor = 'transparent';
     currentIndex++;
 
     if (currentIndex < puzzles.length) {

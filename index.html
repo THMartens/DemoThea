@@ -49,25 +49,60 @@
 
     </section>
 
-     <!-- Scene 5 -- Het doekje -->
+    <!-- Scene 5 -- Het doekje -->
     <section class="scene" id="scene-5"></section>
 
     <!-- Scene 6 -- Zoek de fout -->
-     <section class="scene" id="scene-6">
-     <h1>Zoek de fout</h1>
+    <section class="scene" id="scene-6">
+      <h1>Waar heeft het doekje de foto aangetast?</h1>
 
       <div id="imageContainer">
-        <img id="mainImage" src="assets/photos/mistake/1.jpeg">
+        <img id="mainImage" src="assets/photos/mistake/1.jpg">
         <div id="hotspot" class="hotspot"></div>
       </div>
 
       <br>
       <button id="nextButton2">Doorgaan →</button>
-      </section>
-    
+    </section>
+
+    <!-- Scene 7 --  Beveiligingsvragen -->
+    <section class="scene" id="scene-7"></section>
+
+    <!-- Scene 8 -- Quiz -->
+    <section class="scene" id="scene-8">
+
+      <div id="mediaContainer">
+        <img id="questionImage" />
+        <video muted autoplay loop 
+          id="questionVideo"
+          controlsList="nodownload nofullscreen noplaybackrate"
+          preload="metadata"
+        ></video>
+      </div>
+      <div id="questionNumber"></div>
+      <div id="questionText"></div>
+
+      <div class="answers">
+        <button class="answerBtn" data-index="0"></button>
+        <button class="answerBtn" data-index="1"></button>
+        <button class="answerBtn" data-index="2"></button>
+        <button class="answerBtn" data-index="3"></button>
+      </div>
+    </section>
+
+    <!-- Scene 9 -- Het album -->
+    <section class="scene" id="scene-9"></section>
+
+    <!-- Scene 10 -- Japanse puzzel -->
+    <section class="scene" id="scene-10">
+      <div data-nonogram-puzzle-grid></div>
+      <div data-nonogram-game-controls></div>
+      <button id="checkBtn">Doorgaan →</button>
+      <div id="feedback" style="color:red; margin-top:10px;"></div>
+    </section>
 
     <!-- Final Scene -->
-    <section class="scene" id="scene-7">
+    <section class="scene" id="scene-11">
       <h1>Je hebt het verhaal van Thea ontdekt!</h1>
       <p>Bedankt voor het spelen van deze interactieve ervaring. We hopen dat je genoten hebt van het ontdekken van Thea's verhaal en de uitdagingen die ze heeft doorstaan. Blijf nieuwsgierig en blijf verhalen ontdekken!</p>
     </section>
@@ -82,10 +117,69 @@
   </main>
 
   <!-- JS Scripts-->
-  <script src="dialogue.js"></script>
-  <script src="timeline.js"></script>
-  <script src="spot_the_mistake.js"></script>
-  <script src="script.js"></script>
+  <script src="scripts/dialogue.js"></script>
+  <script src="scripts/timeline.js"></script>
+  <script src="scripts/spot_the_mistake.js"></script>
+  <script src="scripts/quiz.js"></script>
+  <script src="scripts/nonogram.min.js"></script>
+  <script>
+  const creator = new Nonogram.Creator();
+
+  // row clues: [ [3,1], [5], ...]
+const grid = [
+  [1, 0, 1, 1, 0],
+  [1, 1, 0, 1, 1],
+  [0, 1, 1, 0, 1],
+  [1, 0, 1, 1, 0],
+  [0, 1, 0, 1, 1]
+];
+
+grid_size = 5;
+
+// If you want a *random* puzzle:
+// const puzzle = creator.createRandom(5, 5);
+
+// Or use your own grid:
+const puzzle = creator.createFromGrid(grid);
+
+const gui = new Nonogram.Gui();
+gui.draw(puzzle);
+
+function isPuzzleSolved(puzzle) {
+    // Loop through each cell
+    for (let i = 0; i < grid_size * grid_size; i++) {
+
+            // user’s current value
+            const current = puzzle.getCellByIndex(i).userSolution; 
+            // correct solution
+            const correct = puzzle.getCellByIndex(i).solution;
+
+            console.log(`Cell ${i}: user=${current}, solution=${correct}`);
+
+            // if any cell doesn’t match
+            if ((current === 1 && correct === 0) || (current !== 1 && correct === 1)) {
+                return false;
+            }
+        }
+    
+    return true;
+    }
+
+  const nextBtn = document.getElementById("checkBtn");
+  const feedback  = document.getElementById("feedback");
+
+  // Handle button click
+  nextBtn.addEventListener("click", () => {
+    if (isPuzzleSolved(puzzle)) {
+        feedback.textContent = "";      // clear previous message
+        goToScene(11);     // go to the next scene
+    } else {
+        feedback.textContent = "De puzzel is nog niet opgelost!";
+    }
+  });
+</script>
+
+  <script src="scripts/script.js"></script>
   
 </body>
 </html>
