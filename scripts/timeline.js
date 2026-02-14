@@ -7,8 +7,7 @@ const correctOrder = Array.from(
 );
 
 const timeline = document.getElementById('timeline');
-const timeline_fb = document.getElementById('timeline_fb');
-//const timelineBtn = document.getElementById('timelineBtn');
+const nextBtn = document.getElementById('nextBtn');
 
 let draggedImg = null;
 
@@ -66,18 +65,13 @@ const currentOrder = [...timeline.querySelectorAll('.slot img')]
 const isCorrect = currentOrder.every(
     (src, index) => src === correctOrder[index]
 );
-/*
+
 if (isCorrect) {
     message.style.display = 'block';
     nextButton.style.display = 'inline-block';
 } else {
     message.style.display = 'none';
     nextButton.style.display = 'none';
-}*/
-if (isCorrect) {
-    goToScene(6)
-} else {
-    timeline_fb.style.display = 'inline-block';
 }
 }
 
