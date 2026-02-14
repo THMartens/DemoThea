@@ -3,11 +3,11 @@ class DialogueSystem {
     this.box = document.getElementById("dialogue-box");
     this.nameEl = document.getElementById("character-name");
     this.textEl = document.getElementById("dialogue-text");
+    this.imageEl = document.getElementById("character-image"); // new image element
 
     this.lines = [];
     this.index = 0;
-
-    this.clickHandler = null; // store event handler
+    this.clickHandler = null;
   }
 
   async start(path) {
@@ -17,7 +17,6 @@ class DialogueSystem {
     this.box.classList.remove("hidden");
 
     return new Promise((resolve) => {
-      // set up click handler for advancing dialogue
       this.clickHandler = () => {
         this.index++;
         if (this.index < this.lines.length) {
@@ -25,12 +24,12 @@ class DialogueSystem {
         } else {
           this.box.classList.add("hidden");
           this.box.removeEventListener("click", this.clickHandler);
-          resolve(); // resolve the promise when dialogue ends
+          resolve();
         }
       };
 
       this.box.addEventListener("click", this.clickHandler);
-      this.showLine(); // show first line immediately
+      this.showLine();
     });
   }
 
@@ -38,6 +37,14 @@ class DialogueSystem {
     const line = this.lines[this.index];
     this.nameEl.textContent = line.name;
     this.textEl.textContent = line.text;
+
+    if (line.image) {
+      this.imageEl.src = line.image;
+      this.imageEl.classList.remove("hidden");
+    } else {
+      this.imageEl.src = "";
+      this.imageEl.classList.add("hidden");
+    }
   }
 }
 

@@ -11,18 +11,84 @@
 
   <main id="game">
 
+    <!-- Scene 0 -- Titelscherm -->
+    <section class="scene active" id="scene-0">
+      <img class="scene-image" src="Titlescreen.png">
+      <button onclick="goToScene(1)" id="startButton">Start</button>
+    </section>
+
     <!-- Scene 1 -- Introductie -->
-    <section class="scene" id="scene-1"></section>
+    <section class="scene" id="scene-1">
+      <img class="scene-image" src="assets/photos/introductie/huis.jpg">
+    </section>
 
-    <!-- Scene 2 -- Aardbeving -->
-    <section class="scene" id="scene-2"></section>
+    <!-- Scene 2 -- Herinneringen -->
+    <section class="scene" id="scene-2">
+      <div class="gallery">
+        <div class="photo photo1">
+  <div class="photo-inner">
+    <img src="assets/photos/timeline/timeline03.jpeg" alt="">
+  </div>
+</div>
+        <div class="photo photo2">
+  <div class="photo-inner">
+    <img src="assets/photos/timeline/timeline08.jpeg" alt="">
+  </div>
+</div>
+        <div class="photo photo3">
+  <div class="photo-inner">
+    <img src="assets/photos/timeline/timeline05.jpeg" alt="">
+  </div>
+</div>
+        </div>
+        <div class="photo photo4">
+  <div class="photo-inner">
+    <img src="assets/photos/timeline/timeline04.jpeg" alt="">
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Scene 3 -- Aardbeving -->
+    <section class="scene" id="scene-3">
+      <div class="gallery">
+
+  <div class="photo photo1 earthquake slide-left">
+    <div class="photo-inner">
+      <img src="assets/photos/timeline/timeline03.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="photo photo2 earthquake slide-down">
+    <div class="photo-inner">
+      <img src="assets/photos/timeline/timeline08.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="photo photo3 earthquake slide-diagonal">
+    <div class="photo-inner">
+      <img src="assets/photos/timeline/timeline05.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="photo photo4 earthquake slide-up">
+    <div class="photo-inner">
+      <img src="assets/photos/timeline/timeline04.jpeg" alt="">
+    </div>
+  </div>
+
+</div>
+    </section>
     
-    <!-- Scene 3 -- Na de Aardbeving -->
-    <section class="scene" id="scene-3"></section>
-
-    <!-- Scene 4 -- Tijdlijn Puzzel -->
+    <!-- Scene 4 -- Na de Aardbeving -->
     <section class="scene" id="scene-4">
+      <div class="gallery"></div>
+    </section>
+
+    <!-- Scene 5 -- Tijdlijn Puzzel -->
+    <section class="scene" id="scene-5">
       <h1>Plaats de foto's in chronologische volgorde</h1>
+      <div class="gallery">
 
       <div id="timeline"></div>
 
@@ -45,16 +111,21 @@
 
 
       <div id="message">✅ Dat is de juiste volgorde!</div>
-      <button onclick="goToScene(5)" id="nextButton">Doorgaan →</button>
-
+      <button onclick="goToScene(6)" id="nextButton">Doorgaan →</button>
+</div>
     </section>
 
-    <!-- Scene 5 -- Het doekje -->
-    <section class="scene" id="scene-5"></section>
-
-    <!-- Scene 6 -- Zoek de fout -->
+    <!-- Scene 6 -- Het doekje -->
     <section class="scene" id="scene-6">
-      <h1>Waar heeft het doekje de foto aangetast?</h1>
+       <div class="gallery">
+    <img class="scene-image" src="scene6.png" alt="">
+  
+        </div>
+    </section>
+
+    <!-- Scene 7 -- Zoek de fout -->
+    <section class="scene" id="scene-7">
+      <h1>Klik op de plek waar het doekje de foto heeft aangetast</h1>
 
       <div id="imageContainer">
         <img id="mainImage" src="assets/photos/mistake/1.jpg">
@@ -65,11 +136,21 @@
       <button id="nextButton2">Doorgaan →</button>
     </section>
 
-    <!-- Scene 7 --  Beveiligingsvragen -->
-    <section class="scene" id="scene-7"></section>
-
-    <!-- Scene 8 -- Quiz -->
+    <!-- Scene 8 --  Beveiligingsvragen -->
     <section class="scene" id="scene-8">
+      <div class="gallery">
+        <img class="photo photo-inner photo1" src="assets/photos/mistake/5.jpg">
+
+        <img class="photo photo-inner photo2" src="assets/photos/mistake/4.jpg">
+        <img class="photo photo-inner photo3" src="assets/photos/mistake/3.jpg">
+        <img class="photo photo-inner photo4" src="assets/photos/mistake/2.jpg">
+
+        <img class="photo photo-inner photo5" src="assets/photos/mistake/1.jpg">
+      </div>
+    </section>
+
+    <!-- Scene 9 -- Quiz -->
+    <section class="scene" id="scene-9">
 
       <div id="mediaContainer">
         <img id="questionImage" />
@@ -90,29 +171,49 @@
       </div>
     </section>
 
-    <!-- Scene 9 -- Het album -->
-    <section class="scene" id="scene-9"></section>
-
-    <!-- Scene 10 -- Japanse puzzel -->
+    <!-- Scene 10 -- Het album -->
     <section class="scene" id="scene-10">
-      <div data-nonogram-puzzle-grid></div>
-      <div data-nonogram-game-controls></div>
-      <button id="checkBtn">Doorgaan →</button>
+      <img class="scene-image" src="scene10.png">
+    </section>
+
+    <!-- Scene 11 -- Japanse puzzel -->
+    <section class="scene" id="scene-11">
+        <div data-nonogram-puzzle-grid></div>
+        <div data-nonogram-game-controls></div>
+
+      <button id="checkBtn">Controleren</button>
       <div id="feedback" style="color:red; margin-top:10px;"></div>
     </section>
 
-    <!-- Final Scene -->
-    <section class="scene" id="scene-11">
-      <h1>Je hebt het verhaal van Thea ontdekt!</h1>
-      <p>Bedankt voor het spelen van deze interactieve ervaring. We hopen dat je genoten hebt van het ontdekken van Thea's verhaal en de uitdagingen die ze heeft doorstaan. Blijf nieuwsgierig en blijf verhalen ontdekken!</p>
+    <!-- Scene 12 -- De laatste foto -->
+    <section class="scene" id="scene-12">
+      <img class="scene-image" src="assets/photos/NonoThea.jpeg">
     </section>
 
+    <!-- Scene 13 --ENDCARD -->
+    <section class="scene" id="scene-13">
+      <h1>Fijne valentijn liefje!</h1>
+      <img src="assets/photos/TNT.png">
+      <p>Ik hou heel veel van jou! Ik kan niet wachten tot we weer samen zijn❤️ </p>
+      <button onclick="goToScene(14)">Credits</button>
+    </section>
+
+    <!-- Scene 14 --Bedankt voor het spelen -->
+    <section class="scene" id="scene-14">
+      <h1>Bedankt voor het spelen!</h1>
+      <img class="scene-image" src="assets/photos/MartensGames.png">
+      <p>Ik hoop dat je ervan hebt genoten! Deze game is een officieel product uitgebracht door Martens Games. Meer zal mogelijk volgen...  </p>
+    </section>
+
+
     <!-- Dialogue Box -->
-    <div id="dialogue-box">
+<div id="dialogue-box" class="hidden">
+    <img id="character-image" class="hidden" src="" alt="Character">
+    <div id="dialogue-content">
         <div id="character-name"></div>
         <div id="dialogue-text"></div>
     </div>
-
+</div>
 
   </main>
 
@@ -122,63 +223,7 @@
   <script src="scripts/spot_the_mistake.js"></script>
   <script src="scripts/quiz.js"></script>
   <script src="scripts/nonogram.min.js"></script>
-  <script>
-  const creator = new Nonogram.Creator();
-
-  // row clues: [ [3,1], [5], ...]
-const grid = [
-  [1, 0, 1, 1, 0],
-  [1, 1, 0, 1, 1],
-  [0, 1, 1, 0, 1],
-  [1, 0, 1, 1, 0],
-  [0, 1, 0, 1, 1]
-];
-
-grid_size = 5;
-
-// If you want a *random* puzzle:
-// const puzzle = creator.createRandom(5, 5);
-
-// Or use your own grid:
-const puzzle = creator.createFromGrid(grid);
-
-const gui = new Nonogram.Gui();
-gui.draw(puzzle);
-
-function isPuzzleSolved(puzzle) {
-    // Loop through each cell
-    for (let i = 0; i < grid_size * grid_size; i++) {
-
-            // user’s current value
-            const current = puzzle.getCellByIndex(i).userSolution; 
-            // correct solution
-            const correct = puzzle.getCellByIndex(i).solution;
-
-            console.log(`Cell ${i}: user=${current}, solution=${correct}`);
-
-            // if any cell doesn’t match
-            if ((current === 1 && correct === 0) || (current !== 1 && correct === 1)) {
-                return false;
-            }
-        }
-    
-    return true;
-    }
-
-  const nextBtn = document.getElementById("checkBtn");
-  const feedback  = document.getElementById("feedback");
-
-  // Handle button click
-  nextBtn.addEventListener("click", () => {
-    if (isPuzzleSolved(puzzle)) {
-        feedback.textContent = "";      // clear previous message
-        goToScene(11);     // go to the next scene
-    } else {
-        feedback.textContent = "De puzzel is nog niet opgelost!";
-    }
-  });
-</script>
-
+  <script src="scripts/nonogram.js"></script>
   <script src="scripts/script.js"></script>
   
 </body>

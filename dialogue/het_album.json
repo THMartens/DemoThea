@@ -1,30 +1,37 @@
 [
     {
         "name": "Thea",
-        "text": "Pfoe! Die was nog moeilijker dan mijn laatste VGT, maar het is gelukt. "
+        "text": "Pfoe! Die was nog moeilijker dan mijn laatste VGT, maar het is gelukt. ",
+        "image": "assets/photos/gezicht/opluchting.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Nu kan ik alle foto's die ik nog kwijt ben opnieuw printen zodat voor het album."
+        "text": "Nu kan ik alle foto's die ik nog kwijt ben opnieuw printen zodat voor het album.",
+        "image": "assets/photos/gezicht/blij.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Maar wat is dit dan?"
+        "text": "Maar wat is dit dan?",
+        "image": "assets/photos/gezicht/actief.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Het lijkt erop dat Ties zijn lievelingsfoto nog extra beveiligd heeft met een of ander ingewikkeld wiskundig systeem. "
+        "text": "Het lijkt erop dat Ties zijn lievelingsfoto nog extra beveiligd heeft met een of ander ingewikkeld wiskundig systeem. ",
+        "image": "assets/photos/gezicht/actief.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Wat een nerd..."
+        "text": "Wat een nerd...",
+        "image": "assets/photos/gezicht/teleurgesteld.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Oh nevermind. Het is gewoon een Japanse puzzel."
+        "text": "Oh nevermind. Het is gewoon een Japanse puzzel.",
+        "image": "assets/photos/gezicht/actief.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Wat een nerd..."
+        "text": "Wat een nerd...",
+        "image": "assets/photos/gezicht/teleurgesteld.jpeg"
     }
 ]

@@ -1,46 +1,57 @@
 [
     {
         "name": "Thea",
-        "text": "Deze foto's lijken me niet meer te redden, en ik ben sowieso ook nog één andere foto kwijt."
+        "text": "Deze foto's lijken me niet meer te redden, en ik ben sowieso ook nog één andere foto kwijt.",
+        "image": "assets/photos/gezicht/teleurgesteld.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Er zit niets anders op dan ze opnieuw uit te printen..."
+        "text": "Er zit niets anders op dan ze opnieuw uit te printen...",
+        "image": "assets/photos/gezicht/teleurgesteld.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Gelukkig heb ik het album op mijn laptop staan, en ik heb het mapje extra sterk beveiligd."
+        "text": "Gelukkig heb ik het album op mijn laptop staan, en ik heb het mapje extra sterk beveiligd.",
+        "image": "assets/photos/gezicht/actief.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Om in het mapje te komen moet je 10 beveiligingsvragen op een rij goed beantwoorden."
+        "text": "Om in het mapje te komen moet je 10 beveiligingsvragen op een rij goed beantwoorden.",
+        "image": "assets/photos/gezicht/neutraal.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Wat slim van mij!"
+        "text": "Wat slim van mij!",
+        "image": "assets/photos/gezicht/blij.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Zo kan nooit iemand de foto's zien voor wie ze niet bedoeld zijn."
+        "text": "Zo kan nooit iemand de foto's zien voor wie ze niet bedoeld zijn.",
+        "image": "assets/photos/gezicht/blij.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Zoals bijvoorbeeld één van mijn ouders."
+        "text": "Zoals bijvoorbeeld één van mijn ouders.",
+        "image": "assets/photos/gezicht/blij.jpeg"
     },
     {
         "name": "Thea",
-        "text": "..."
+        "text": "...",
+        "image": "assets/photos/gezicht/blij.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Bij elke vraag zit een foto, die als geheugensteuntje dient."
+        "text": "Bij elke vraag zit een foto, die als geheugensteuntje dient.",
+        "image": "assets/photos/gezicht/neutraal.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Daarnaast zijn de vragen natuurlijk wel multiple choice."
+        "text": "Daarnaast zijn de vragen natuurlijk wel multiple choice.",
+        "image": "assets/photos/gezicht/opluchting.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Dat ben ik nou eenmaal gewend van mijn studie."
+        "text": "Dat ben ik nou eenmaal gewend van mijn studie.",
+        "image": "assets/photos/gezicht/neutraal.jpeg"
     }
 ]

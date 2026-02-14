@@ -132,7 +132,7 @@ btn.addEventListener('click', () => {
         loadQuestion(currentQuestion);
     } else {
         // All correct → next scene
-        goToScene(9);
+        goToScene(10);
     }
     } else {
     // Wrong answer → restart

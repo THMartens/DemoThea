@@ -70,7 +70,7 @@
       loadPuzzle(currentIndex);
     } else {
       // Next scene
-      goToScene(7);
+      goToScene(8);
     }
   });
 

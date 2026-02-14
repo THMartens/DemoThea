@@ -1,22 +1,27 @@
 [
     {
         "name": "Thea",
-        "text": "Nu weet ik het zeker! Alle foto's liggen weer in de juiste volgorde, wat een opluchting." 
+        "text": "Nu weet ik het zeker! Alle foto's liggen weer in de juiste volgorde, wat een opluchting.",
+        "image": "assets/photos/gezicht/blij.jpeg" 
     },
     {
         "name": "Thea",
-        "text": "Maar wacht eens even, volgens mij ontbreken er nog een paar..."
+        "text": "Maar wacht eens even, volgens mij ontbreken er nog een paar...",
+        "image": "assets/photos/gezicht/dom.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Ah kijk daar bij de wastafel liggen ze, precies onder ..."
+        "text": "Ah kijk daar bij de wastafel liggen ze, precies onder ...",
+        "image": "assets/photos/gezicht/opluchting.jpeg"
     },
     {
         "name": "Thea",
-        "text": "HET VIEZE DOEKJE! Oh nee!"
+        "text": "HET VIEZE DOEKJE! Oh nee!",
+        "image": "assets/photos/gezicht/paniek.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Het doekje is waarschijnlijk zo radioactief dat de foto's helemaal aangetast zijn. Hmm eens even kijken..."
+        "text": "Het doekje is waarschijnlijk zo radioactief dat de foto's helemaal aangetast zijn. Hmm eens even kijken...",
+        "image": "assets/photos/gezicht/actief.jpeg"
     }
 ]

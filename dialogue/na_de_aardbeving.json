@@ -5,18 +5,21 @@
     },
     {
         "name": "",
-        "text": "Tot haar grote schrik is het doosje met foto's van haar bureau gevallen en liggen de foto's verspreid over de hele kamer."
+        "text": "Tot haar grote schrik zijn alle foto's van haar bureau gevallen en liggen de foto's verspreid over de hele kamer."
     },
     {
         "name": "Thea",
-        "text": "Wat een ramp!"
+        "text": "Wat een ramp!",
+        "image": "assets/photos/gezicht/paniek.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Gelukkig liggen de meeste foto's nog wel op chronologische volgorde. Dat is handig om erachter te komen of ik nog foto's kwijt ben."
+        "text": "Ik moet alle foto's op chronologische volgorde leggen. Dat is handig om erachter te komen of ik nog foto's kwijt ben.",
+        "image": "assets/photos/gezicht/neutraal.jpeg"
     },
     {
         "name": "Thea",
-        "text": "Ik heb nog wel een paar foto's waar ik over twijfel, wat is ook alweer de juiste volgorde?"
+        "text": "Ik heb nog wel een paar foto's waar ik over twijfel, wat is ook alweer de juiste volgorde?",
+        "image": "assets/photos/gezicht/actief.jpeg"
     }   
 ]

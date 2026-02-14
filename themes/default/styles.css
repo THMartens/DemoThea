@@ -176,166 +176,102 @@ label.x {
     template: puzzle-grid.html
 */
 
-[data-nonogram-puzzle-grid] {
-    transition: scale 0.5s ease;
-}
+/* ===============================
+   Nonogram Clean & Minimal CSS
+   =============================== */
 
-table.nonogram-puzzle-grid {
-    position: relative;
-    width: auto;
-    table-layout: fixed;
-    transition: transform 1s ease;
+/* --- Puzzle Grid Container --- */
+[data-nonogram-puzzle-grid] {
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
     margin: 0 auto;
 }
 
-table.nonogram-puzzle-grid:after {
-    transition: opacity;
+/* --- Table --- */
+table.nonogram-puzzle-grid {
+    border-collapse: collapse; /* no gaps between cells */
+    table-layout: fixed;
+    margin: 0 auto;
 }
 
-table.nonogram-puzzle-grid th {
-    max-width: 100px;
-    max-height: 100px;
-    transition: max-width 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
-}
-
-table.nonogram-puzzle-grid tbody {
-    border: none;
-}
-
-table.nonogram-puzzle-grid td {
-    vertical-align: middle;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-}
-
-table.nonogram-puzzle-grid td .fill {
-    border: 2px solid #ccc;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #fff;
-    transition: border-width 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
-}
-
-table.nonogram-puzzle-grid td.flippable .fill {
-    transition: transform 0.3s ease;
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
-}
-
-table.nonogram-puzzle-grid td.flippable.flipped .fill {
-    transform: rotateY(180deg);
-}
-
-table.nonogram-puzzle-grid td.highlight .fill {
-    opacity: 0.5;
-}
-
-table.nonogram-puzzle-grid td.preview {
-    padding: 10px;
-    transition: opacity 1s ease;
-}
-
+/* --- Cells --- */
 table.nonogram-puzzle-grid td.puzzle-cell {
-    background: #ccc;
+    width: 15px;       /* adjustable size */
+    height: 15px;
+    padding: 0;
+    border: 1px solid #000;  /* thin black outline */
 }
 
-table.nonogram-puzzle-grid td.puzzle-cell.playable {
-    cursor: pointer;
+table.nonogram-puzzle-grid td.puzzle-cell .fill {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;  /* empty cell */
+    text-align: center;
+    line-height: 25px;
+    font-size: 16px;
 }
 
-table.nonogram-puzzle-grid .fill {
-    min-width: 30px;
-    min-height: 30px;
-    padding: 5px;
-}
-
-table.nonogram-puzzle-grid.tiny .fill {
-    min-width: 10px;
-    min-height: 10px;
-    border-radius: 5px;
-}
-
-table.nonogram-puzzle-grid.small .fill {
-    min-width: 20px;
-    min-height: 20px;
-}
-
-table.nonogram-puzzle-grid.medium .fill {
-    min-width: 30px;
-    min-height: 30px;
-}
-
-table.nonogram-puzzle-grid.large .fill {
-    min-width: 50px;
-    min-height: 50px;
-}
-
-table.nonogram-puzzle-grid td.puzzle-cell .fill {}
-
+/* Filled cells (user positive) */
 table.nonogram-puzzle-grid td.puzzle-cell.user-positive .fill {
-    background: #424242;
+    background-color: #2b2b2b;  /* black */
 }
 
+/* Marked empty cells (X) */
 table.nonogram-puzzle-grid td.puzzle-cell.user-negative .fill,
 table.nonogram-puzzle-grid td.puzzle-cell.solution-negative .fill {
     background-color: #fff;
-    background-size: 100% auto;
-    background-position: 50% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='25' y2='25' stroke='%23ACACAC' stroke-width='2'/%3E%3Cline x1='25' y1='0' x2='0' y2='25' stroke='%23ACACAC' stroke-width='2'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cpolygon fill='%23ACACAC' points='26.104,9.521 22.479,5.897 16,12.376 9.522,5.897 5.896,9.522 12.375,16 5.898,22.478 9.522,26.103 16,19.625 22.479,26.103 26.103,22.478 19.625,16 '/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-size: 80% 80%;
 }
 
+/* --- Clues / Hints --- */
 table.nonogram-puzzle-grid .hint {
-    vertical-align: bottom;
-    transition: opacity 1s ease;
     background-color: #fff;
     color: #444;
-    border: 2px solid #fff;
-    border-radius: 10px;
-}
-
-table.nonogram-puzzle-grid.tiny .hint {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: bottom;
+    border: 1px solid #000;
+    width: 15px;
+    height: 15px;
     font-size: 10px;
 }
 
-table.nonogram-puzzle-grid.large .hint {
-    font-size: 20px;
-    line-height: 25px;
-}
-
-table.nonogram-puzzle-grid .hint .fill {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-table.nonogram-puzzle-grid.tiny .hint .fill {
-    padding: 1px;
-}
-
+/* Top clues stacked vertically with spacing */
 table.nonogram-puzzle-grid .hint.top .fill {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;  /* space between numbers */
 }
 
-table.nonogram-puzzle-grid .hint.top {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-table.nonogram-puzzle-grid .hint.left {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
+/* Left clues horizontally with spacing */
 table.nonogram-puzzle-grid .hint.left .fill {
-    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3px;
+    gap: 5px;  /* space between numbers */
 }
-table.nonogram-puzzle-grid .hint.left span {
-    margin: 0 0 0 5px;
+
+/* Optional: responsive line height for clues */
+table.nonogram-puzzle-grid .hint .fill span {
+    line-height: 1.1;
 }
-table.nonogram-puzzle-grid td.row-column-highlight:not(.user-positive):not(.solution-positive) .fill {
-    background-color: #ddeef7;
+
+/* --- Optional: Solved Puzzle Effects (keep your repo's behavior) --- */
+table.nonogram-puzzle-grid.solved td.puzzle-cell.solution-positive .fill,
+table.nonogram-puzzle-grid.solved td.puzzle-cell.user-positive:not(.solution-negative) .fill {
+    background-color: #73ba6c;
+}
+
+table.nonogram-puzzle-grid.solved td.puzzle-cell.solution-negative .fill {
+    opacity: 0.2;
 }
 
 /* solved */
@@ -384,6 +320,29 @@ table.nonogram-puzzle-grid.solved th {
     text-align: center;
     line-height: 2em;
     font-size: 1.5em;
+}
+
+/* Base thin border for all puzzle cells */
+table.nonogram-puzzle-grid td.puzzle-cell {
+    border: 1px solid #000;
+}
+
+/* Thick right border for every 5th column (affects all rows) */
+table.nonogram-puzzle-grid tr td.puzzle-cell:nth-of-type(5n) {
+    border-right: 3px solid #000;
+}
+
+/* Thick bottom border for every 5th row (affects all columns) */
+table.nonogram-puzzle-grid tr:nth-of-type(5n) td.puzzle-cell {
+    border-bottom: 3px solid #000;
+}
+
+/* Outer edges of the grid */
+table.nonogram-puzzle-grid tr:first-of-type td.puzzle-cell {
+    border-top: 3px solid #000;
+}
+table.nonogram-puzzle-grid td.puzzle-cell:first-of-type {
+    border-left: 3px solid #000;
 }
 
 

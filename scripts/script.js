@@ -1,12 +1,14 @@
 const dialogue = new DialogueSystem();
 
 const scenes = {
-  1: { dialogue: "dialogue/intro.json", nextScene: 10 },
-  2: { dialogue: "dialogue/aardbeving.json", nextScene: 3 },
-  3: { dialogue: "dialogue/na_de_aardbeving.json", nextScene: 4 },
-  5: { dialogue: "dialogue/het_doekje.json", nextScene: 6 },
-  7: { dialogue: "dialogue/beveiligingsvragen.json", nextScene: 8 },
-  9: { dialogue: "dialogue/het_album.json", nextScene: 10 },
+  1: { dialogue: "dialogue/intro.json", nextScene: 2 },
+  2: { dialogue: "dialogue/herinneringen.json", nextScene: 3 },
+  3: { dialogue: "dialogue/aardbeving.json", nextScene: 4 },
+  4: { dialogue: "dialogue/na_de_aardbeving.json", nextScene: 5 },
+  6: { dialogue: "dialogue/het_doekje.json", nextScene: 7 },
+  8: { dialogue: "dialogue/beveiligingsvragen.json", nextScene: 9 },
+  10: { dialogue: "dialogue/het_album.json", nextScene: 11 },
+  12: { dialogue: "dialogue/finale.json", nextScene: 13 }
 };
 
 async function goToScene(number) {
@@ -28,24 +30,8 @@ async function goToScene(number) {
   }
 }
 
-
-
-function checkAnswer() {
-  const input = document.getElementById('answer').value.toLowerCase().trim();
-  const feedback = document.getElementById('feedback');
-
-  // CHANGE THIS TO THE REAL ANSWER
-  const correctAnswer = 1;
-
-  if (input === correctAnswer) {
-    goToScene(4);
-  } else {
-    feedback.textContent = "Hmm… try again 😏";
-  }
-}
-
 // start the first scene
-goToScene(1);
+goToScene(0);
 
 
 

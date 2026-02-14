@@ -13,12 +13,12 @@ body {
 }
 
 #game {
-  background: white;
   padding: 2rem;
   border-radius: 16px;
   width: 100%;
   max-width: 1280px;
   text-align: center;
+  background: white;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -70,6 +70,27 @@ input {
   border: 4px solid #fff;
   font-family: monospace;
   cursor: pointer;
+
+  display: flex;            /* enable side-by-side layout */
+  align-items: flex-start;  /* align top */
+  gap: 20px;                /* space between image and text */
+}
+
+#character-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+#character-image.hidden {
+  display: none;       /* already hidden */
+  pointer-events: none; /* ensure clicks pass through */
+}
+
+#dialogue-content {
+  flex: 1; /* take remaining space */
 }
 
 #character-name {
@@ -83,7 +104,162 @@ input {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+/*
+--- INTRODUCTION ---
+*/
+/* Container holding the 4 images */
+.gallery {
+  position: relative;
+  height: 80vh;
+  padding: 4rem;
+  
+  /* Wood background */
+  background-image: url("assets/photos/introductie/tafel.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  overflow: hidden;
+}
+
+/* Photo frame styling */
+.photo {
+  position: absolute;
+  width: 250px;
+}
+
+.photo-inner {
+  background: white;
+  padding: 12px 12px 40px 12px;
+  border-radius: 4px;
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.3),
+    0 6px 6px rgba(0,0,0,0.2);
+}
+
+/* Make images responsive */
+.photo img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+.photo1 {
+  top: 15%;
+  left: 20%;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.photo2 {
+  top: 25%;
+  left: 35%;
+  transform: rotate(6deg);
+  z-index: 2;
+}
+
+.photo3 {
+  top: 40%;
+  left: 50%;
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.photo4 {
+  top: 20%;
+  left: 60%;
+  transform: rotate(10deg);
+  z-index: 4;
+}
+
+.photo5 {
+  top: 35%;
+  left: 70%;
+  transform: rotate(-6deg);
+  z-index: 5;
+}
+
+/* Optional hover lift effect */
+.photo:hover {
+  transform: translateY(-5px);
+}
+
+/* Earthquake animation class */
+.earthquake .photo-inner {
+  animation: quake 0.4s infinite;
+}
+
+.earthquake {
+  animation: slideAway 8s linear forwards;
+}
+@keyframes quake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-5px, 5px) rotate(-2deg); }
+  50% { transform: translate(5px, -5px) rotate(2deg); }
+  75% { transform: translate(-5px, 3px) rotate(-3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Down */
+.slide-down {
+  animation: slideDown 8s linear forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(120vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Up */
+.slide-up {
+  animation: slideUp 8s linear forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(-120vh) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+/* Left */
+.slide-left {
+  animation: slideLeft 8s linear forwards;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(-120vw) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+/* Right */
+.slide-right {
+  animation: slideRight 8s linear forwards;
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(120vw) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* Diagonal */
+.slide-diagonal {
+  animation: slideDiagonal 8s linear forwards;
+}
+
+@keyframes slideDiagonal {
+  to {
+    transform: translate(120vw, 120vh) rotate(35deg);
+    opacity: 0;
+  }
 }
 
 /*
@@ -102,7 +278,7 @@ input {
     }
 
 .slot {
-  width: 160px;
+  width: 180px;
   height: 200px;
   border: 1px solid #ccc;
   background: #f8f8f8;
@@ -114,6 +290,14 @@ input {
 .slot img {
   width: 100%;
   height: 100%;
+  background: white;
+  padding: 6px;
+  border-radius: 4px;
+  box-shadow:
+    0 6px 12px rgba(0,0,0,0.25),
+    0 4px 6px rgba(0,0,0,0.15);
+
+  box-sizing: border-box;
   object-fit: cover;
   cursor: grab;
 }
@@ -248,47 +432,14 @@ input {
   margin: 0 auto;
 }
 
-/*
---- NONOGRAM ---
-*/
-#nonogram {
-  display: grid;
-  grid-template-columns: repeat(55, 12px);
-  grid-template-rows: repeat(55, 12px);
-  width: fit-content;
+.scene-image {
+  max-width: 100%;
+  max-height: calc(90vh - 300px);
+  object-fit: contain;
+  display: block;
   margin: 20px auto;
+  align-self: center;
 }
 
-.cell {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.puzzle {
-  cursor: pointer;
-}
-
-.filled {
-  background: black;
-}
-
-.dot::after {
-  content: "•";
-  font-size: 10px;
-  color: #888;
-  position: absolute;
-  top: -1px;
-  left: 2px;
-}
-
-.clue {
-  font-size: 10px;
-  text-align: center;
-  line-height: 12px;
-  background: #f6f4ef;
-  border: 1px solid #ccc;
-}
 
 
