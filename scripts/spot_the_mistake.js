@@ -54,7 +54,7 @@
     hotspot.style.left = puzzle.x + 'px';
     hotspot.style.top = puzzle.y + 'px';
 
-    nextButton2.style.display = 'none';
+    //nextButton2.style.display = 'none';
   }
 
   hotspot.addEventListener('click', () => {
