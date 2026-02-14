@@ -7,7 +7,8 @@ const correctOrder = Array.from(
 );
 
 const timeline = document.getElementById('timeline');
-const nextBtn = document.getElementById('nextBtn');
+const message = document.getElementById('message');
+const nextButton = document.getElementById('nextButton');
 
 let draggedImg = null;
 
