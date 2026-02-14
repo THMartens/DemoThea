@@ -2,9 +2,10 @@ const PHOTO_COUNT = 8;
 
 // Correct order (by filename)
 const correctOrder = Array.from(
-{ length: PHOTO_COUNT },
-(_, i) => `assets/photos/timeline/timeline${String(i + 1).padStart(2, '0')}.jpeg`
+  { length: PHOTO_COUNT },
+  (_, i) => `assets/photos/timeline/timeline${String(i + 1).padStart(2, '0')}.jpeg`
 );
+const correctFiles = correctOrder.map(path => path.split('/').pop());
 
 const timeline = document.getElementById('timeline');
 const message = document.getElementById('message');
@@ -27,6 +28,7 @@ shuffled.forEach(src => {
 
     const img = document.createElement('img');
     img.src = src;
+    img.dataset.file = src.split('/').pop();
     img.draggable = true;
 
     img.addEventListener('dragstart', () => {
@@ -60,20 +62,20 @@ shuffled.forEach(src => {
 
 // Check if current order matches correct order
 function checkSolution() {
-const currentOrder = [...timeline.querySelectorAll('.slot img')]
-    .map(img => img.src.split(location.origin + '/')[1]);
+  const currentOrder = [...timeline.querySelectorAll('.slot img')]
+    .map(img => img.dataset.file);
 
-const isCorrect = currentOrder.every(
-    (src, index) => src === correctOrder[index]
-);
+  const isCorrect = currentOrder.every(
+    (file, index) => file === correctFiles[index]
+  );
 
-if (isCorrect) {
+  if (isCorrect) {
     message.style.display = 'block';
     nextButton.style.display = 'inline-block';
-} else {
+  } else {
     message.style.display = 'none';
     nextButton.style.display = 'none';
-}
+  }
 }
 
 initTimeline();

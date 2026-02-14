@@ -62,7 +62,6 @@ const hints = {row:[[],[4],[12],[18],[21],[23],[25],[30],[37],[38],[40],[42,5],[
 n_rows = hints.row.length;
 n_cols = hints.column.length;
 grid_size = n_rows*n_cols;
-console.log(`Grid size: ${grid_size}`);
 
 // If you want a *random* puzzle:
 //const puzzle = creator.createRandom(50, 50);
@@ -72,7 +71,6 @@ console.log(`Grid size: ${grid_size}`);
 
 // Or use your own hints:
 const puzzle = creator.createFromHints(hints);
-console.log(puzzle);
 
 const gui = new Nonogram.Gui();
 gui.draw(puzzle);
